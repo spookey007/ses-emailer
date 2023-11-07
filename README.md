@@ -42,7 +42,7 @@
 
 ## 🔓 License
 
-This project lives under MIT License. See LICENSE for more details. ©2019 - [Erlan Lucio](https://www.linkedin.com/in/erlanlucio/)
+This project lives under MIT License. See LICENSE for more details. ©2023 - [Fahad Bashir](https://www.linkedin.com/in/fahad-bashir-354044164)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
