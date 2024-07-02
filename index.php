@@ -8,6 +8,19 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    <script src="js/custom.js"></script>
    <script src="js/notification.js"></script>
+   <script>
+        function checkPassword() {
+            var password = prompt("Please enter the password:");
+            if (password === "Khaby123") { // Replace 'your_password' with the actual password
+                document.cookie = "authenticated=true"; // Set a cookie to remember the authenticated state
+                window.location.reload(); // Reload the page to check authentication
+            } else {
+                alert("Incorrect password!");
+                window.location.href = "error.php"; // Redirect to an error page
+            }
+        }
+    </script>
+
    <link href="styles/bootstrap.css" rel='stylesheet' type='text/css'>
    <link href="styles/animate.css" rel='stylesheet' type='text/css'>
    <link href='styles/notification.css' rel='stylesheet' type='text/css'>
@@ -22,6 +35,16 @@
    margin:30px;
    }
 </style>
+<body>
+<?php
+    if (!isset($_COOKIE["authenticated"])) {
+        echo "<script>checkPassword();</script>";
+        exit();
+    }
+    ?>
+    <h1>Welcome to eMarket</h1>
+    <!-- Your HTML content goes here -->
+
 <div class="animated bounceInDown" id="formulario">
    <table class="display" id="example">
       <center>
@@ -61,8 +84,8 @@
 </div>
 <!-- Copyright -->
 <!-- <div id="down" class="footer-copyright text-center py-3">© 2023 Copyright:
-   <a href="https://www.linkedin.com/in/erlan-lucio-760745183/"> LulU</a>
 </div> -->
 </div>
 <!-- Copyright -->
+</body>
 </html>
