@@ -1,5 +1,5 @@
 <?php
-error_reporting(1);
+error_reporting(0);
 include_once 'PHPMailer/class.smtp.php';
 include_once 'PHPMailer/class.phpmailer.php';
 
@@ -14,7 +14,7 @@ if ($_GET['send'] == "cc") {
     //Sending the email using a PHPMailer class
     $Mailer = new PHPMailer;
     $Mailer->CharSet = "utf8";
-    // $Mailer->SMTPDebug = 3;
+    $Mailer->SMTPDebug = 3;
     $Mailer->IsSMTP();
     $Mailer->SMTPOptions = array(
         'tls' => array(
@@ -23,14 +23,14 @@ if ($_GET['send'] == "cc") {
             'allow_self_signed' => true,
         ),
     );
-    $Mailer->Host = "HOST";
+    $Mailer->Host = "smtp.hostinger.com";
     $Mailer->SMTPAuth = true;
-    $Mailer->Username = 'USER';
-    $Mailer->Password = 'PWD';
+    $Mailer->Username = 'kelly@accounting-additions.co.uk';
+    $Mailer->Password = 'London77*';
     $Mailer->SMTPSecure = "ssl";
     $Mailer->Port = 465;
     $Mailer->FromName = $nome_remetente;
-    $Mailer->From = 'FROM';
+    $Mailer->From = 'kelly@accounting-additions.co.uk';
     $Mailer->AddAddress($emails_remetente);
     $Mailer->IsHTML(true);
     $Mailer->Subject = $assunto;
