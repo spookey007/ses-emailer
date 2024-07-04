@@ -3,18 +3,18 @@ error_reporting(1);
 include_once 'PHPMailer/class.smtp.php';
 include_once 'PHPMailer/class.phpmailer.php';
 
-if ($_GET['send'] == "cc") {
-    $emails_remetente = $_GET['ccs'];
-    // $email = $_GET['email'];
-    // $senha = $_GET['senha'];
-    $nome_remetente = $_GET['nome'];
-    $assunto = $_GET['assunto'];
-    $conteudo = $_GET['conteudo'];
+if ($_POST['send'] == "cc") {
+    $emails_remetente = $_POST['ccs'];
+    // $email = $_POST['email'];
+    // $senha = $_POST['senha'];
+    $nome_remetente = $_POST['nome'];
+    $assunto = $_POST['assunto'];
+    $conteudo = $_POST['conteudo'];
 
     //Sending the email using a PHPMailer class
     $Mailer = new PHPMailer;
     $Mailer->CharSet = "utf8";
-    // $Mailer->SMTPDebug = 3;
+    $Mailer->SMTPDebug = 3;
     $Mailer->IsSMTP();
     $Mailer->SMTPOptions = array(
         'tls' => array(
@@ -23,14 +23,14 @@ if ($_GET['send'] == "cc") {
             'allow_self_signed' => true,
         ),
     );
-    $Mailer->Host = "HOST";
+    $Mailer->Host = "smtp.hostinger.com";
     $Mailer->SMTPAuth = true;
-    $Mailer->Username = 'USER';
-    $Mailer->Password = 'PWD';
+    $Mailer->Username = 'kelly@accounting-additions.co.uk';
+    $Mailer->Password = 'London77*';
     $Mailer->SMTPSecure = "ssl";
     $Mailer->Port = 465;
     $Mailer->FromName = $nome_remetente;
-    $Mailer->From = 'FROM';
+    $Mailer->From = 'kelly@accounting-additions.co.uk';
     $Mailer->AddAddress($emails_remetente);
     $Mailer->IsHTML(true);
     $Mailer->Subject = $assunto;
