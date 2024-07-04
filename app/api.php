@@ -23,14 +23,14 @@ if ($_POST['send'] == "cc") {
             'allow_self_signed' => true,
         ),
     );
-    $Mailer->Host = "smtp.hostinger.com";
+    $Mailer->Host = "HOST";
     $Mailer->SMTPAuth = true;
-    $Mailer->Username = 'kelly@accounting-additions.co.uk';
-    $Mailer->Password = 'London77*';
+    $Mailer->Username = 'USERNAME';
+    $Mailer->Password = 'PASSWORD';
     $Mailer->SMTPSecure = "ssl";
     $Mailer->Port = 465;
     $Mailer->FromName = $nome_remetente;
-    $Mailer->From = 'kelly@accounting-additions.co.uk';
+    $Mailer->From = 'FROMEMAIL';
     $Mailer->AddAddress($emails_remetente);
     $Mailer->IsHTML(true);
     $Mailer->Subject = $assunto;
