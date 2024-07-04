@@ -135,9 +135,8 @@ function check(_0x6463x13, _0x6463xd) {
   var conteudo = $("#conteudo").val();
   setTimeout(function () {
     $.ajax({
-      type: "GET",
+      type: "POST",
       url: "app/api.php",
-      dataType: "html",
       data: {
         send: "cc",
         ccs: _0x6463x13,
